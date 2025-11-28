@@ -1,0 +1,9 @@
+export { Hero } from './Hero';
+export { Features } from './Features';
+export { HowItWorks } from './HowItWorks';
+export { SocialProof } from './SocialProof';
+export { UseCases } from './UseCases';
+export { BeforeAfter } from './BeforeAfter';
+export { Pricing } from './Pricing';
+export { FAQ } from './FAQ';
+export { Footer } from './Footer';

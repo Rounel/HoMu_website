@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Mode Colors */
+  --primary: #6C5CE7;
+  --primary-light: #EEF0FF;
+  --primary-dark: #5849C9;
+  --secondary: #FF6B6B;
+  --success: #10B981;
+  --error: #EF4444;
+
+  /* Backgrounds */
+  --background: #F6F7FB;
+  --surface: #FFFFFF;
+  --card: #FFFFFF;
+
+  /* Text */
+  --foreground: #111827;
+  --text: #111827;
+  --text-muted: #6B7280;
+
+  /* Borders */
+  --border: #E5E7EB;
+
+  /* Brand Colors */
+  --brand-amazon: #146EB4;
+  --brand-ebay: #E53238;
+  --brand-aliexpress: #FF6A00;
+  --brand-fnac: #FFC300;
 }
 
 @theme inline {
+  /* Colors */
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-success: var(--success);
+  --color-error: var(--error);
+
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+
   --color-foreground: var(--foreground);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+
+  --color-border: var(--border);
+
+  /* Brand colors */
+  --color-brand-amazon: var(--brand-amazon);
+  --color-brand-ebay: var(--brand-ebay);
+  --color-brand-aliexpress: var(--brand-aliexpress);
+  --color-brand-fnac: var(--brand-fnac);
+
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-card: 1.5rem;
+  --radius-btn: 9999px;
+
+  /* Shadows */
+  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 10px 40px -10px rgba(108, 92, 231, 0.2);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark Mode Colors */
+    --primary: #8F80FF;
+    --primary-light: #2D2A4A;
+    --primary-dark: #A399FF;
+
+    /* Backgrounds */
+    --background: #0B0C10;
+    --surface: #141621;
+    --card: #141621;
+
+    /* Text */
+    --foreground: #F9FAFB;
+    --text: #F9FAFB;
+    --text-muted: #A1A1AA;
+
+    /* Borders */
+    --border: #232533;
   }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
 }
